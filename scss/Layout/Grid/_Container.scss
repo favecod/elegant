@@ -1,0 +1,14 @@
+.container, .container-fluid {
+    width: 100%;
+    padding: 0 2vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@each $breakpoint in map-keys($breakpoints) {
+    @media (min-width:map-get($breakpoints, $breakpoint)) {
+        .container {
+            max-width: map-get($breakpoints, $breakpoint);
+        }
+    }
+}
