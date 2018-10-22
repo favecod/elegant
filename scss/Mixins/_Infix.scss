@@ -1,0 +1,7 @@
+@function breakpoint-infix($infix) {
+    @if $infix == 'xs' {
+        @return '';
+    } @else {
+        @return '-' + $infix;
+    }
+}

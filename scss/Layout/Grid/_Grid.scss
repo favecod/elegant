@@ -1,46 +1,42 @@
 %column-default {
-  display: inline-flex;
-  padding: 0 1%;
-  box-sizing: border-box;
-  width: 100%;
+    display: inline-flex;
+    padding: 0 1%;
+    box-sizing: border-box;
+    width: 100%;
 }
 
 // Default
 @for $col from $grid-column through 1 {
-  .col-#{$col} {
-    @extend %column-default;
-  }
+    .col-#{$col} {
+        @extend %column-default;
+    }
 }
 
 @each $breakpoint in map-keys($breakpoints) {
-  @for $col from $grid-column through 1 {
-    .col-#{$breakpoint}-#{$col} {
-      @extend %column-default;
+    @for $col from $grid-column through 1 {
+        .col-#{$breakpoint}-#{$col} {
+            @extend %column-default;
+        }
     }
-  }
 }
 
 // Width
-@for $col from 1 through $grid-column {
-  .col-#{$col} {
-    max-width: $column-width * $col;
-    flex: 0 0 ($column-width * $col);
-  }
-}
 
-@each $breakpoint in map-keys($breakpoints) {
-  @include media-breakpoint($breakpoint) {
-    @for $col from 1 through $grid-column {
-      .col-#{$breakpoint}-#{$col} {
-        max-width: $column-width * $col;
-        flex: 0 0 ($column-width * $col);
-      }
+@each $breakpoint in map-keys($breakpoints-all) {
+    @include media-breakpoint-all($breakpoint) {
+        $infix: breakpoint-infix($breakpoint);
+
+        @for $col from 1 through $grid-column {
+            .col#{$infix}-#{$col} {
+                max-width: $column-width * $col;
+                flex: 0 0 ($column-width * $col);
+            }
+        }
     }
-  }
 }
 
 // Row
 .row {
-  display: flex;
-  flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
 }

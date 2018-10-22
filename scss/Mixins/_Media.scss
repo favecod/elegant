@@ -1,7 +1,20 @@
 @mixin media-breakpoint($breakpoint, $condition : min-width) {
-  $min : map-get($breakpoints, $breakpoint);
+    $min : map-get($breakpoints, $breakpoint);
+
     @media ($condition : $min) {
-      @content;
+        @content;
+    }
+}
+
+@mixin media-breakpoint-all($breakpoint, $condition : min-width) {
+    $min : map-get($breakpoints-all, $breakpoint);
+
+    @if $min == 0 {
+        @content;
+    } @else {
+        @media ($condition : $min) {
+            @content;
+        }
     }
 }
 
