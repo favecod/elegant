@@ -1,0 +1,10 @@
+$positions: 
+    static,
+    relative,
+    absolute,
+    fixed,
+    sticky;
+
+// Z-Index
+$zindex-sticky: 1020 !default;
+$zindex-fixed: 1030 !default;
