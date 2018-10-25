@@ -1,0 +1,34 @@
+@each $breakpoint in map-keys($breakpoints-all) {
+    $infix: breakpoint-infix($breakpoint);
+
+    @include media-breakpoint-all($breakpoint) {
+        // Width
+        @each $size in map-keys($sizes) {
+            .w-#{$size} {
+                width: map-get($sizes, $size) !important;
+            }
+        }
+        // Height
+        @each $size in map-keys($sizes) {
+            .h-#{$size} {
+                height: map-get($sizes, $size) !important;
+            }
+        }
+        // Square
+        @for $length from 1 through 10 {
+            .square-#{$length} {
+                width: $length * 2rem !important;
+                height: $length * 2rem !important;
+                margin: 0 0 $num3 $num3;
+                border-radius: $num2;
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+
+    }
+}
+
+
+
