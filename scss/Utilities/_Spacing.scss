@@ -1,0 +1,38 @@
+// Padding and Margin Top , Bottom , Left , Right
+@each $spacer in map-keys($spacers) {
+    @each $direction in map-keys($directions) {
+        .p#{$direction}-#{$spacer} {
+            padding-#{map-get($directions,$direction)}: map-get($spacers, $spacer) !important;
+        }
+
+        .m#{$direction}-#{$spacer} {
+            margin-#{map-get($directions,$direction)}: map-get($spacers, $spacer) !important;
+        }
+    }
+}
+
+// Padding and Margin X , Y 
+@each $spacer in map-keys($spacers) {
+    @each $XYDirection in map-keys($xy-directions) {
+        .p#{$XYDirection}-#{$spacer} {
+            padding-#{nth(map-get($xy-directions,$XYDirection),1)}: map-get($spacers, $spacer) !important;
+            padding-#{nth(map-get($xy-directions,$XYDirection),2)}: map-get($spacers, $spacer) !important;
+        }
+
+        .m#{$XYDirection}-#{$spacer} {
+            margin-#{nth(map-get($xy-directions,$XYDirection),1)}: map-get($spacers, $spacer) !important;
+            margin-#{nth(map-get($xy-directions,$XYDirection),2)}: map-get($spacers, $spacer) !important;
+        }
+    }
+}
+
+// Padding and Margin
+@each $spacer in map-keys($spacers) {
+    .p-#{$spacer} {
+        padding: map-get($spacers, $spacer) !important;
+    }
+
+    .m-#{$spacer} {
+        margin: map-get($spacers, $spacer) !important;
+    }
+}

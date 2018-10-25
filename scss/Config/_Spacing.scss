@@ -1,0 +1,23 @@
+// Spaces
+$spacer : 1rem !default;
+$spacers : (
+    0: 0,
+    1: ($spacer * .25),
+    2: ($spacer * .5),
+    3: $spacer,
+    4: ($spacer * 1.5),
+    5: ($spacer * 3)
+);
+// Directions  Top , Bottom , Left , Right
+$directions : (
+    t : top,
+    b : bottom,
+    l : left,
+    r : right
+);
+
+// Directions  X & Y
+$xy-directions : (
+    x : (left, right),
+    y : (top, bottom)
+);
