@@ -1,75 +1,81 @@
-.flex-column {
-    flex-direction: column;
-}
+@each $breakpoint in map-keys($breakpoints-all) {
+    $infix: breakpoint-infix($breakpoint);
 
-.flex-row {
-    flex-direction: row;
-}
+    @include media-breakpoint-all($breakpoint) {
+       .flex#{$infix}-column {
+           flex-direction: column;
+       }
 
-.flex-column-rev {
-    flex-direction: column-reverse;
-}
+       .flex#{$infix}-row {
+           flex-direction: row;
+       }
 
-.flex-row-rev {
-    flex-direction: row-reverse;
-}
+       .flex#{$infix}-column-rev {
+           flex-direction: column-reverse;
+       }
 
-.j-c-center {
-    justify-content: center;
-}
+       .flex#{$infix}-row-rev {
+           flex-direction: row-reverse;
+       }
 
-.j-c-around {
-    justify-content: space-around;
-}
+       .j-c#{$infix}-center {
+           justify-content: center;
+       }
 
-.j-c-between {
-    justify-content: space-between;
-}
+       .j-c#{$infix}-around {
+           justify-content: space-around;
+       }
 
-.j-c-start {
-    justify-content: flex-start;
-}
+       .j-c#{$infix}-between {
+           justify-content: space-between;
+       }
 
-.j-c-end {
-    justify-content: flex-end;
-}
+       .j-c#{$infix}-start {
+           justify-content: flex-start;
+       }
 
-.j-c-baseline {
-    justify-content: baseline;
-}
+       .j-c#{$infix}-end {
+           justify-content: flex-end;
+       }
 
-.j-c-stretch {
-    justify-content: stretch;
-}
+       .j-c#{$infix}-baseline {
+           justify-content: baseline;
+       }
 
-.a-i-center {
-    align-items: center;
-}
+       .j-c#{$infix}-stretch {
+           justify-content: stretch;
+       }
 
-.a-i-start {
-    align-items: flex-start;
-}
+       .a-i#{$infix}-center {
+           align-items: center;
+       }
 
-.a-i-end {
-    align-items: flex-end;
-}
+       .a-i#{$infix}-start {
+           align-items: flex-start;
+       }
 
-.a-i-baseline {
-    align-items: baseline;
-}
+       .a-i#{$infix}-end {
+           align-items: flex-end;
+       }
 
-.a-i-stretch {
-    align-items: stretch;
-}
+       .a-i#{$infix}-baseline {
+           align-items: baseline;
+       }
 
-.flex-wrap {
-    flex-wrap: wrap;
-}
+       .a-i#{$infix}-stretch {
+           align-items: stretch;
+       }
 
-.flex-nowrap {
-    flex-wrap: nowrap;
-}
+       .flex#{$infix}-wrap {
+           flex-wrap: wrap;
+       }
 
-.flex-wrap-rev {
-    flex-wrap: wrap-reverse;
+       .flex#{$infix}-nowrap {
+           flex-wrap: nowrap;
+       }
+
+       .flex#{$infix}-wrap-rev {
+           flex-wrap: wrap-reverse;
+       }
+    }
 }
