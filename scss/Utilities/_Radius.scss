@@ -1,0 +1,15 @@
+@each $breakpoint in map-keys($breakpoints-all) {
+    $infix: breakpoint-infix($breakpoint);
+
+    @include media-breakpoint-all($breakpoint) {
+        @each $radius in map-keys($radiuses) {
+            .r#{$infix}-#{$radius} {
+                border-radius: map-get($radiuses, $radius) !important;
+            }
+        }
+        .round#{$infix} {
+            border-radius: 50% !important;
+        }
+    }
+}
+
