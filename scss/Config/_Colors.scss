@@ -1,0 +1,33 @@
+// Colors
+$white :   #f7f7f7 !default;
+$black :   #1b1c1d !default;
+$gray :    #767676 !default;
+$blue :    #2185d0 !default;
+$red :     #ff4949 !default;
+$yellow :  #fdbe34 !default;
+$green :   #13ce66 !default;
+$orange :  #ff7100 !default;
+$pink :    #e03997 !default;
+$cyan :    #00b5ad !default;
+$purple :  #a333c8 !default;
+$violet :  #6435c9 !default;
+$night :   #334252 !default;
+$day :     #dadfe1 !default;
+
+// Config
+$colors : (
+    white: ($white,$night),
+    black: ($black,$white),
+    gray: ($gray,$white),
+    blue: ($blue,$white),
+    red: ($red,$white),
+    yellow: ($yellow,$night),
+    green: ($green,$white),
+    orange: ($orange,$white),
+    pink: ($pink,$white),
+    cyan: ($cyan,$white),
+    purple: ($purple,$white),
+    violet: ($violet,$white),
+    night: ($night,$white),
+    day: ($day,$night),
+);
